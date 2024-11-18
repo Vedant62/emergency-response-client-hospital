@@ -18,6 +18,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import { cn } from '@/lib/utils'
+import { AmbulanceMap } from '@/components/ambulance-map'
 
 interface HospitalDashboardProps {
   ambulances: Record<string, AmbulanceData>;
@@ -117,8 +118,8 @@ export function HospitalDashboardComponent({
                       Team: {`${ambulance.team.paramedic}, ${ambulance.team.driver}`}
                     </p>
                   </div>
-                  <div className="aspect-video bg-muted rounded-md flex items-center justify-center">
-                    <Map className="h-8 w-8 text-muted-foreground" />
+                  <div className="aspect-video bg-muted rounded-md overflow-hidden">
+                    <AmbulanceMap ambulance={ambulance} />
                   </div>
                 </div>
 
